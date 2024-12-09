@@ -29,3 +29,30 @@ href="../assets/css/jquery.dataTables.min.css">
 </tbody>
 </table>
 </div>
+
+  <!-- Footer -->
+<!--#include file="../footer.html" -->
+<!-- Enlaces a JavaScript -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#tabla-reservas').DataTable({
+      "ajax": {
+        "url": "/api/reservas",
+        "dataSrc": ""
+      },
+      "columns": [
+        { "data": "id" },
+        { "data": "cliente_nombre" },
+        { "data": "habitacion_numero" },
+        { "data": "fecha_inicio" },
+        { "data": "fecha_fin" },
+        { "data": "estado" }
+      ]
+    });
+  });
+</script>
+</body>
+</html>
